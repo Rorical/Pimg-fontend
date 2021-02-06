@@ -1,28 +1,30 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<el-container id="app">
+		<Header />
+		<transition name="el-fade-in" mode="out-in">
+			<router-view></router-view>
+		</transition>
+	</el-container>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+	import Header from "@/views/Header.vue"
+	export default {
+		name: 'App',
+		components: {
+			Header
+		}
+	}
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+	#app {
+		display: block;
+		box-sizing: border-box;
+		height: 100%;
+		max-width: 1140px;
+		padding: 0;
+		margin: 0 auto
+	}
+	
 </style>
